@@ -16,6 +16,7 @@ const allCampuses = [
     address: "Brooklyn",
     imageUrl: "",
     description: "A college in Brooklyn",
+    students: 0,
   },
   {
     id: "3434455",
@@ -23,6 +24,7 @@ const allCampuses = [
     address: "Staten Island",
     imageUrl: "",
     description: "A college in Staten Island",
+    students: 0,
   },
   {
     id: "3434457",
@@ -30,6 +32,7 @@ const allCampuses = [
     address: "New York",
     imageUrl: "",
     description: "",
+    students: 0,
   },
 ];
 

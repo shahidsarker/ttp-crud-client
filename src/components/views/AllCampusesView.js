@@ -4,6 +4,10 @@ import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 
 const AllCampusesView = (props) => {
+  if (!props.allCampuses.length) {
+    return <div className="all-campuses">There are no campuses</div>;
+  }
+
   return (
     <div className="all-campuses">
       {props.allCampuses.map((campus) => (
