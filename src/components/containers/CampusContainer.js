@@ -10,7 +10,7 @@ class CampusContainer extends Component {
   // }
 
   componentDidMount() {
-    this.props.fetchCampus();
+    this.props.fetchCampus(this.props.match.params.id);
   }
 
   render() {
@@ -27,7 +27,7 @@ const mapState = (state) => {
 
 const mapDispatch = (dispatch) => {
   return {
-    fetchCampus: () => dispatch(fetchCampusThunk()),
+    fetchCampus: (id) => dispatch(fetchCampusThunk(id)),
   };
 };
 

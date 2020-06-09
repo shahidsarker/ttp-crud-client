@@ -7,7 +7,7 @@ const RoutesView = () => {
     <Switch>
       <Route exact path="/" component={AllCampusesContainer} />
       <Route exact path="/campuses" component={AllCampusesContainer} />
-      <Route exact path="/campus" component={CampusContainer} />
+      <Route exact path="/campuses/:id" component={CampusContainer} />
     </Switch>
   );
 };
