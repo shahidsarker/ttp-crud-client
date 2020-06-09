@@ -1,10 +1,10 @@
 import React from "react";
-// import './styles/AllPlayersView.css';
+import "./styles/AllCampusesView.css";
 import PropTypes from "prop-types";
 
 const AllCampusesView = (props) => {
   return (
-    <div className="all-players">
+    <div className="all-campuses">
       {props.allCampuses.map((campus) => (
         <div key={campus.id}>
           <h1>{campus.name}</h1>
