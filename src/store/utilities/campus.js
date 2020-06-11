@@ -19,10 +19,6 @@ export const fetchCampusThunk = (id) => (dispatch) => {
     .then((res) => res.data)
     .then((campus) => dispatch(fetchCampus(campus)))
     .catch((err) => console.log(err));
-
-  // const campus = allcampus.find((c) => c.id === id);
-
-  // return dispatch(fetchCampus(campus));
 };
 
 // Reducer
