@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { AddCampusFormView } from "../views";
 import { addCampusThunk } from "../../thunks";
@@ -42,6 +43,10 @@ const mapDispatch = (dispatch) => {
   return {
     addCampus: (campus) => dispatch(addCampusThunk(campus)),
   };
+};
+
+AddCampusFormContainer.propTypes = {
+  addCampus: PropTypes.func.isRequired,
 };
 
 export default connect(null, mapDispatch)(AddCampusFormContainer);

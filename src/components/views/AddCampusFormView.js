@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 const AddCampusFormView = (props) => {
   return (
@@ -40,6 +41,15 @@ const AddCampusFormView = (props) => {
       </form>
     </div>
   );
+};
+
+AddCampusFormView.propTypes = {
+  handleSubmit: PropTypes.func.isRequired,
+  handleChange: PropTypes.func.isRequired,
+  name: PropTypes.string.isRequired,
+  address: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+  imageUrl: PropTypes.string.isRequired,
 };
 
 export default AddCampusFormView;
