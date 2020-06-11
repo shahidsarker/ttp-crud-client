@@ -1,5 +1,7 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
 import { AddCampusFormView } from "../views";
+import { addCampusThunk } from "../../thunks";
 
 class AddCampusFormContainer extends Component {
   constructor(props) {
@@ -18,7 +20,10 @@ class AddCampusFormContainer extends Component {
     });
   };
 
-  handleSubmit = () => {};
+  handleSubmit = (e) => {
+    e.preventDefault();
+    this.props.addCampus(this.state);
+  };
   render() {
     return (
       <AddCampusFormView
@@ -33,4 +38,10 @@ class AddCampusFormContainer extends Component {
   }
 }
 
-export default AddCampusFormContainer;
+const mapDispatch = (dispatch) => {
+  return {
+    addCampus: (campus) => dispatch(addCampusThunk(campus)),
+  };
+};
+
+export default connect(null, mapDispatch)(AddCampusFormContainer);
