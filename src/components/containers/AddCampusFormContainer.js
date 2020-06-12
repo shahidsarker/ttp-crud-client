@@ -48,8 +48,9 @@ class AddCampusFormContainer extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    this.props.addCampus(this.state);
+    if (this.state.isValidName) this.props.addCampus(this.state);
   };
+
   render() {
     return (
       <>
