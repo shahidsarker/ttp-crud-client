@@ -85,7 +85,10 @@ const reducer = (state = [], action) => {
     case ADD_CAMPUS:
       return [...state, action.payload];
     case EDIT_CAMPUS:
-      return [...state, action.payload];
+      return state.map((campus) =>
+        campus.id === action.payload.id ? action.payload : campus
+      );
+
     case DELETE_CAMPUS:
       console.log(action.payload);
       return state.filter((campus) => campus.id !== action.payload);
