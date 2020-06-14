@@ -11,6 +11,10 @@ const CampusView = (props) => {
       <p>{props.campus.description}</p>
 
       <StudentNameListContainer students={props.campus.students} />
+
+      <button onClick={() => props.handleDelete(props.campus.id)}>
+        Delete
+      </button>
     </>
   );
 };
