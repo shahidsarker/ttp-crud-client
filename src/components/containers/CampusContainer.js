@@ -1,6 +1,10 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { fetchCampusThunk, deleteCampusThunk } from "../../thunks";
+import {
+  fetchCampusThunk,
+  deleteCampusThunk,
+  enrollStudentThunk,
+} from "../../thunks";
 
 import { CampusView } from "../views";
 
@@ -14,9 +18,17 @@ class CampusContainer extends Component {
     this.props.history.push("/campuses");
   };
 
+  handleEnrollStudent = (campusId, studentId) => {
+    this.props.enrollStudent(campusId, studentId);
+  };
+
   render() {
     return (
-      <CampusView campus={this.props.campus} handleDelete={this.handleDelete} />
+      <CampusView
+        campus={this.props.campus}
+        handleDelete={this.handleDelete}
+        handleEnrollStudent={this.handleEnrollStudent}
+      />
     );
   }
 }
@@ -32,6 +44,8 @@ const mapDispatch = (dispatch) => {
   return {
     fetchCampus: (id) => dispatch(fetchCampusThunk(id)),
     deleteCampus: (id) => dispatch(deleteCampusThunk(id)),
+    enrollStudent: (campusId, studentId) =>
+      dispatch(enrollStudentThunk(campusId, studentId)),
   };
 };
 

@@ -1,8 +1,5 @@
 import axios from "axios";
 
-// const BASE_URL =
-//   "https://cors-anywhere.herokuapp.com/" + "http://localhost:3001";
-
 // ACTION TYPES;
 const FETCH_ALL_CAMPUSES = "FETCH_ALL_CAMPUSES";
 const ADD_CAMPUS = "ADD_CAMPUS";
