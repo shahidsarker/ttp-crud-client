@@ -16,11 +16,10 @@ const AllStudentsView = (props) => {
       <div>
         {props.allStudents.map((student) => (
           <div key={student.id}>
-            <Link to={`/students`}>
-              <h1>{student.name}</h1>
+            <Link to={`/students/${student.id}`}>
+              <h1>{student.firstName}</h1>
             </Link>
             <img src={student.imageUrl} width="200px" alt={student.name} />
-            <p>{student.students.length} students</p>
           </div>
         ))}
       </div>
@@ -28,8 +27,8 @@ const AllStudentsView = (props) => {
   );
 };
 
-// AllStudentsView.propTypes = {
-//   allStudents: PropTypes.array.isRequired,
-// };
+AllStudentsView.propTypes = {
+  allStudents: PropTypes.array.isRequired,
+};
 
 export default AllStudentsView;
