@@ -8,3 +8,4 @@ export { default as StudentNameListContainer } from "./StudentNameListContainer"
 export { default as AllStudentsContainer } from "./AllStudentsContainer";
 export { default as AddStudentFormContainer } from "./AddStudentFormContainer";
 export { default as AddStudentToCampusContainer } from "./AddStudentToCampusContainer";
+export { default as StudentContainer} from "./StudentContainer";
