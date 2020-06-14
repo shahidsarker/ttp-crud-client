@@ -1,4 +1,6 @@
 import React from "react";
+import "./styles/CampusView.css";
+import { Link } from "react-router-dom";
 import { StudentNameListContainer } from "../containers";
 
 const CampusView = (props) => {
@@ -12,6 +14,9 @@ const CampusView = (props) => {
 
       <StudentNameListContainer students={props.campus.students} />
 
+      <Link className="edit-link" to={`/campuses/${props.campus.id}/edit`}>
+        Edit
+      </Link>
       <button onClick={() => props.handleDelete(props.campus.id)}>
         Delete
       </button>
