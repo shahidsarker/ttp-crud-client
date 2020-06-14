@@ -52,7 +52,8 @@ export const addCampusThunk = (campus, ownProps) => (dispatch) => {
     .post("/api/campuses", campus)
     .then((res) => res.data)
     .then((newCampus) => {
-      dispatch(addCampus(newCampus));
+      const tweakedCampus = { ...newCampus, students: [] };
+      dispatch(addCampus(tweakedCampus));
       ownProps.history.push(`/campuses/${newCampus.id}`);
     })
     .catch((err) => console.log(err));
