@@ -5,10 +5,6 @@ import { fetchCampusThunk } from "../../thunks";
 import { CampusView } from "../views";
 
 class CampusContainer extends Component {
-  // constructor(props) {
-  //   super(props);
-  // }
-
   componentDidMount() {
     this.props.fetchCampus(this.props.match.params.id);
   }
