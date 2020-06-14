@@ -1,7 +1,8 @@
 nav {
-  padding: 2rem;
+  padding: 1rem;
 }
 
 .nav-link {
-  padding: 1.5rem;
+  padding: 1rem;
+  color: white;
 }

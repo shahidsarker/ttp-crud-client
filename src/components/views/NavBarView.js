@@ -1,10 +1,11 @@
 import React from "react";
 import "./styles/NavBarView.css";
 import { Link } from "react-router-dom";
+import Navbar from 'react-bootstrap/Navbar'
 
 const NavBarView = (props) => {
   return (
-    <nav>
+    <Navbar bg="dark" variant="dark">
       <Link to="/" className="nav-link">
         Home
       </Link>
@@ -14,7 +15,7 @@ const NavBarView = (props) => {
       <Link to="/students" className="nav-link">
         Students
       </Link>
-    </nav>
+    </Navbar>
   );
 };
 

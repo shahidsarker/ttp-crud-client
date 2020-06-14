@@ -2,6 +2,7 @@ import React from "react";
 import "./styles/AllCampusesView.css";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
+import Card from "react-bootstrap/Card";
 
 const AllCampusesView = (props) => {
   if (!props.allCampuses.length) {
@@ -13,19 +14,21 @@ const AllCampusesView = (props) => {
       <Link to="/campuses/new" className="add-campus">
         New Campus
       </Link>
-      <div>
-        {props.allCampuses.map((campus) => (
-          <div key={campus.id}>
-            <Link to={`/campuses/${campus.id}`}>
-              <h1>{campus.name}</h1>
-            </Link>
-            <img src={campus.imageUrl} width="200px" alt={campus.name} />
-            <p>{campus.students.length} students</p>
-            <button onClick={() => props.handleDelete(campus.id)}>
-              Delete
-            </button>
-          </div>
-        ))}
+      <div className="card text-center">
+        <div className='overflow'>
+          {props.allCampuses.map((campus) => (
+            <div key={campus.id}>
+              <Link to={`/campuses/${campus.id}`}>
+                <h1>{campus.name}</h1>
+              </Link>
+              <img src={campus.imageUrl} width="200px" alt={campus.name} />
+              <p>{campus.students.length} students</p>
+              <button onClick={() => props.handleDelete(campus.id)}>
+                Delete
+              </button>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );
