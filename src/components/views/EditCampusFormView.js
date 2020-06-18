@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const AddCampusFormView = (props) => {
+const EditCampusFormView = (props) => {
   return (
     <div>
       <form onSubmit={props.handleSubmit}>
@@ -11,7 +11,6 @@ const AddCampusFormView = (props) => {
             value={props.name}
             name="name"
             onChange={props.handleChange}
-            required
           ></input>
         </div>
         <div>
@@ -20,7 +19,6 @@ const AddCampusFormView = (props) => {
             value={props.address}
             name="address"
             onChange={props.handleChange}
-            required
           ></input>
         </div>
         <div>
@@ -29,7 +27,6 @@ const AddCampusFormView = (props) => {
             value={props.description}
             name="description"
             onChange={props.handleChange}
-            required
           ></input>
         </div>
         <div>
@@ -38,16 +35,15 @@ const AddCampusFormView = (props) => {
             value={props.imageUrl}
             name="imageUrl"
             onChange={props.handleChange}
-            required
           ></input>
         </div>
-        <button>Create Campus</button>
+        <button>Edit Campus</button>
       </form>
     </div>
   );
 };
 
-AddCampusFormView.propTypes = {
+EditCampusFormView.propTypes = {
   handleSubmit: PropTypes.func.isRequired,
   handleChange: PropTypes.func.isRequired,
   name: PropTypes.string.isRequired,
@@ -56,4 +52,4 @@ AddCampusFormView.propTypes = {
   imageUrl: PropTypes.string.isRequired,
 };
 
-export default AddCampusFormView;
+export default EditCampusFormView;
